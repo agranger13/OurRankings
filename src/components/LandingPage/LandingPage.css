@@ -1,34 +1,27 @@
-.LandingPage {
-    .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #f0f0f0;
-      }
-      
-      .form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .input {
-        padding: 10px;
-        font-size: 16px;
-        margin-bottom: 20px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-      }
-      
-      .button {
-        padding: 10px 20px;
-        font-size: 16px;
-        border-radius: 5px;
-        border: none;
-        background-color: #007bff;
-        color: #fff;
-        cursor: pointer;
-      }
+.paper {
+margin-top: 8rem; /* Remplacez theme.spacing(8) */
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.avatar {
+margin: 1rem; /* Remplacez theme.spacing(1) */
+background-color: #f50057 !important; /* Remplacez theme.palette.secondary.main */
+}
+
+.form {
+width: 100%;
+margin-top: 1rem; /* Remplacez theme.spacing(1) */
+}
+
+.submit {
+margin: 1.5rem 0 1rem; /* Remplacez theme.spacing(3, 0, 2) */
+}
+
+.containerWrapper {
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
 }
