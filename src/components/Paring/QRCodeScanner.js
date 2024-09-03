@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Scanner } from '@yudiel/react-qr-scanner';
 import { db } from '../../firebaseConfig';
 import { collection, addDoc } from 'firebase/firestore';
 
 const QRCodeScanner = (userId) => {
   const [setScannedPlayerId] = useState('');
+  const navigate = useNavigate();
+
   const handleScan = (data) => {
     console.log("handle")
     if (data) {
@@ -18,6 +21,7 @@ const QRCodeScanner = (userId) => {
           startedAt: null,
         });
         console.log('Match started with:', data);
+        navigate("/")
       } catch (error) {
         console.error('Error starting match:', error);
       }
@@ -30,7 +34,7 @@ const QRCodeScanner = (userId) => {
 
   return (
     <Scanner
-      onDecode={handleScan}
+      onScan={handleScan}
       onError={handleError}
       style={{ width: '100%' }}
     />
