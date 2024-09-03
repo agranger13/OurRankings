@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { BottomNavigation, BottomNavigationAction } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
+import SportsBasketballIcon from '@mui/icons-material/SportsBasketball';
 import HomePage from '../HomePage/HomePage';
 import LandingPage from '../LandingPage/LandingPage';
+import MatchPage from '../MatchPage/MatchPage';
 // import { useTheme } from '@emotion/react';
 
 const NavigationManager = () => {
@@ -19,6 +21,8 @@ const NavigationManager = () => {
       <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
       <Routes>
         <Route path="/home" element={<HomePage />} />
+        <Route path="/match" element={<MatchPage />} />
+        <Route path="/start_match" element={<MatchPage />} />
         <Route path="/" element={<LandingPage />} /> {/* Default route */}
       </Routes>
       <BottomNavigation
@@ -31,6 +35,12 @@ const NavigationManager = () => {
             icon={<HomeIcon />}
             component={Link}
             to="/home"
+        />
+        <BottomNavigationAction
+            label="Match"
+            icon={<SportsBasketballIcon />}
+            component={Link}
+            to="/match"
         />
       </BottomNavigation>
       </div>
